@@ -1,3 +1,7 @@
 *.idea
 .vscode
 .DS_Store
+
+release/
+kubeflow/.cache
+kubeflow/kustomize
