@@ -12,10 +12,10 @@ commonLabels:
   kustomize.component: argo
 images:
 - name: argoproj/argoui
-  newName: argoproj/argoui
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/argoui
   newTag: v2.3.0
 - name: argoproj/workflow-controller
-  newName: argoproj/workflow-controller
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/workflow-controller
   newTag: v2.3.0
 configMapGenerator:
 - name: workflow-controller-parameters

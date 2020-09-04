@@ -23,16 +23,16 @@ generatorOptions:
 images:
 - name: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-controller
   newTag: v0.8.0
-  newName: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-controller
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/katib-controller
 - name: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-db-manager
   newTag: v0.8.0
-  newName: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-db-manager
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/katib-db-manager
 - name: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-ui
   newTag: v0.8.0
-  newName: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-ui
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/katib-ui
 - name: mysql
   newTag: "8"
-  newName: mysql
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/mysql
 vars:
 - name: clusterDomain
   objref:

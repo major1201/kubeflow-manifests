@@ -9,5 +9,5 @@ commonLabels:
   kustomize.component: metacontroller
 images:
 - name: metacontroller/metacontroller
-  newName: metacontroller/metacontroller
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/metacontroller
   newTag: v0.3.0

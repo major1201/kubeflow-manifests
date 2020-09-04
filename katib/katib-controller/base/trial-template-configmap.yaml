@@ -14,7 +14,7 @@ data:
         spec:
           containers:
           - name: {{.Trial}}
-            image: docker.io/kubeflowkatib/mxnet-mnist
+            image: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/mxnet-mnist
             command:
             - "python3"
             - "/opt/mxnet-mnist/mnist.py"

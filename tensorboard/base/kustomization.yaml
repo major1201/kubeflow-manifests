@@ -28,5 +28,5 @@ configurations:
 - params.yaml
 images:
 - name: tensorflow/tensorflow
-  newName: tensorflow/tensorflow
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/tensorflow
   newTag: 1.8.0

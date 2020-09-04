@@ -25,8 +25,8 @@ configurations:
 - params.yaml
 images:
 - name: gcr.io/kubebuilder/kube-rbac-proxy
-  newName: gcr.io/kubebuilder/kube-rbac-proxy
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/kube-rbac-proxy
   newTag: v0.4.0
-- name: $(registry)/kfserving-controller
-  newName: $(registry)/kfserving-controller
-  newTag: 0.2.2
+# - name: $(registry)/kfserving-controller
+#   newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/kfserving-controller
+#   newTag: 0.2.2

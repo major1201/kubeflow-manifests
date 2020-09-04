@@ -13,7 +13,7 @@ configMapGenerator:
 images:
 - name: gcr.io/ml-pipeline/frontend
   newTag: 0.2.5
-  newName: gcr.io/ml-pipeline/frontend
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/frontend
 vars:
 - name: ui-namespace
   objref:

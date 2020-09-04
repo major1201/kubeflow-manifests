@@ -30,3 +30,7 @@ commonLabels:
 
 configurations:
 - params.yaml
+
+images:
+- name: docker.io/istio/proxyv2
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/proxyv2

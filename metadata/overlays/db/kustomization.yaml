@@ -22,7 +22,7 @@ patchesStrategicMerge:
 - metadata-deployment.yaml
 images:
 - name: mysql
-  newName: mysql
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/mysql
   newTag: 8.0.3
 vars:
 - name: metadata-db-service

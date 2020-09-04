@@ -11,5 +11,5 @@ commonLabels:
   kustomize.component: pytorch-operator
 images:
 - name: gcr.io/kubeflow-images-public/pytorch-operator
-  newName: gcr.io/kubeflow-images-public/pytorch-operator
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/pytorch-operator
   newTag: v1.0.0-g047cf0f

@@ -5,35 +5,35 @@ resources:
 namespace: kubeflow
 images:
 - name: docker.io/istio/kubectl
-  newName: docker.io/istio/kubectl
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/kubectl
   newTag: 1.1.6
 - name: docker.io/istio/galley
-  newName: docker.io/istio/galley
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/galley
   newTag: 1.1.6
 - name: docker.io/istio/proxyv2
-  newName: docker.io/istio/proxyv2
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/proxyv2
   newTag: 1.1.6
 - name: grafana/grafana
-  newName: grafana/grafana
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/grafana
   newTag: 6.0.2
 - name: docker.io/kiali/kiali
-  newName: docker.io/kiali/kiali
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/kiali
   newTag: v0.16
 - name: docker.io/istio/mixer
-  newName: docker.io/istio/mixer
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/mixer
   newTag: 1.1.6
 - name: docker.io/istio/pilot
-  newName: docker.io/istio/pilot
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/pilot
   newTag: 1.1.6
 - name: docker.io/prom/prometheus
-  newName: docker.io/prom/prometheus
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/prometheus
   newTag: v2.3.1
 - name: docker.io/istio/citadel
-  newName: docker.io/istio/citadel
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/citadel
   newTag: 1.1.6
 - name: docker.io/istio/sidecar_injector
-  newName: docker.io/istio/sidecar_injector
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/sidecar_injector
   newTag: 1.1.6
 - name: docker.io/jaegertracing/all-in-one
-  newName: docker.io/jaegertracing/all-in-one
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/all-in-one
   newTag: '1.9'

@@ -30,4 +30,5 @@ release: clean
 	@gtar czf release/manifests-1.0.2.tar.gz --exclude .git --exclude release --exclude kubeflow --transform 's,^,manifests-1.0.2/,' .
 	@kfctl build -V -f $(KFCTL_YAML)
 	@rm -f release/manifests-1.0.2.tar.gz
-	@grep "^    name: " $(KFCTL_YAML) | awk '{print $$2}' | while read line; do echo $$line; ~/Downloads/kustomize build kubeflow/kustomize/$$line > release/$$line.yaml; done
+	@echo "info: Please use kustomize v3.2.3"
+	@grep "^    name: " $(KFCTL_YAML) | awk '{print $$2}' | while read line; do echo $$line; kustomize build kubeflow/kustomize/$$line > release/$$line.yaml; done

@@ -6,7 +6,7 @@ data:
   predictors: |-
     {
         "tensorflow": {
-            "image": "tensorflow/serving",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/serving",
             "defaultImageVersion": "1.14.0",
             "defaultGpuImageVersion": "1.14.0-gpu",
             "allowedImageVersions": [
@@ -21,35 +21,35 @@ data:
             ]
         },
         "onnx": {
-            "image": "mcr.microsoft.com/onnxruntime/server",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/server",
             "defaultImageVersion": "v0.5.1",
             "allowedImageVersions": [
                "v0.5.1"
             ]
         },
         "sklearn": {
-            "image": "gcr.io/kfserving/sklearnserver",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/sklearnserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "xgboost": {
-            "image": "gcr.io/kfserving/xgbserver",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/xgbserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "pytorch": {
-            "image": "gcr.io/kfserving/pytorchserver",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/pytorchserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "tensorrt": {
-            "image": "nvcr.io/nvidia/tensorrtserver",
+            "image": "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/tensorrtserver",
             "defaultImageVersion": "19.05-py3",
             "allowedImageVersions": [
                "19.05-py3"
@@ -62,7 +62,7 @@ data:
   explainers: |-
     {
         "alibi": {
-            "image" : "gcr.io/kfserving/alibi-explainer",
+            "image" : "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/alibi-explainer",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
@@ -71,7 +71,7 @@ data:
     }
   storageInitializer: |-
     {
-        "image" : "gcr.io/kfserving/storage-initializer:0.2.2",
+        "image" : "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/storage-initializer:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
@@ -94,7 +94,7 @@ data:
     }
   logger: |-
     {
-        "image" : "gcr.io/kfserving/logger:0.2.2",
+        "image" : "registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/logger:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",

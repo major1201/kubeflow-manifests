@@ -15,13 +15,13 @@ commonLabels:
   kustomize.component: cert-manager
 images:
 - name: quay.io/jetstack/cert-manager-controller
-  newName: quay.io/jetstack/cert-manager-controller
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/cert-manager-controller
   newTag: v0.11.0
 - name: quay.io/jetstack/cert-manager-webhook
-  newName: quay.io/jetstack/cert-manager-webhook
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/cert-manager-webhook
   newTag: v0.11.0
 - name: quay.io/jetstack/cert-manager-cainjector
-  newName: quay.io/jetstack/cert-manager-cainjector
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/cert-manager-cainjector
   newTag: v0.11.0
 configMapGenerator:
 - name: cert-manager-parameters
