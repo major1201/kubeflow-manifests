@@ -63,5 +63,5 @@ configurations:
 - params.yaml
 images:
 - name: mintel/dex-k8s-authenticator
-  newName: mintel/dex-k8s-authenticator
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/dex-k8s-authenticator
   newTag: 1.2.0

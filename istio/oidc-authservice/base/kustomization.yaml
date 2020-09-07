@@ -83,5 +83,5 @@ configurations:
 - params.yaml
 images:
 - name: gcr.io/arrikto/kubeflow/oidc-authservice
-  newName: gcr.io/arrikto/kubeflow/oidc-authservice
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/oidc-authservice
   newTag: 28c59ef

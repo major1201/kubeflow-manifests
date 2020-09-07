@@ -8,22 +8,31 @@ configMapGenerator:
 # creating patches.
 images:
 - name: docker.io/prom/prometheus
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/prometheus
   newTag: v2.8.0
 - name: gcr.io/istio-release/citadel
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/citadel
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/galley
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/galley
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/kubectl
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/kubectl
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/mixer
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/mixer
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/node-agent-k8s
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/node-agent-k8s
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/pilot
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/pilot
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/proxyv2
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/proxyv2
   newTag: release-1.3-latest-daily
 - name: gcr.io/istio-release/sidecar_injector
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/sidecar_injector
   newTag: release-1.3-latest-daily
 
 resources:
