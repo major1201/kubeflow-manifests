@@ -1,0 +1,48 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- install.yaml
+commonLabels:
+  kustomize.component: argo
+namespace: kubeflow
+
+images:
+- name: argoproj/argocli
+  newTag: v2.10.0
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/argocli
+- name: argoproj/workflow-controller
+  newTag: v2.10.0
+  newName: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/workflow-controller
+
+configMapGenerator:
+- name: workflow-controller-parameters
+  env: params.env
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+vars:
+- name: executorImage
+  objref:
+    kind: ConfigMap
+    name: workflow-controller-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.executorImage
+- name: namespace
+  objref:
+    kind: ConfigMap
+    name: workflow-controller-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.namespace
+- name: clusterDomain
+  objref:
+    kind: ConfigMap
+    name: workflow-controller-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.clusterDomain
+
+configurations:
+- params.yaml
