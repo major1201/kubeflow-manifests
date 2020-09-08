@@ -108,6 +108,7 @@ spec:
       overlays:
       - istio
       - application
+      - traefik
       repoRef:
         name: manifests
         path: argo-2-10

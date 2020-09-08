@@ -1,0 +1,25 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: argo-server
+spec:
+  weighted:
+    services:
+    - kind: Service
+      name: argo-server
+      port: 2746
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argo-server
+spec:
+  entryPoints:
+  - http
+  routes:
+  - kind: Rule
+    match: Host(`$(domain)`)
+    services:
+    - kind: TraefikService
+      name: argo-server
