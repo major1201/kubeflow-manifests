@@ -1,0 +1,21 @@
+image:
+  repository: registry-vpc.cn-hangzhou.aliyuncs.com/hellobike-public/nfs-client-provisioner
+  tag: v3.1.0-k8s1.11
+nfs:
+  mountOptions:
+  - nolock,tcp,noresvport
+  - vers=3
+  path: /kubeflow
+  server: 046db48b10-ltk26.cn-hangzhou.nas.aliyuncs.com
+# nodeSelector:
+#   hellobike.com/team: defensor
+replicaCount: 2
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+storageClass:
+  name: nas-general

@@ -32,3 +32,15 @@ release: clean
 	@rm -f release/manifests-1.0.2.tar.gz
 	@echo "info: Please use kustomize v3.2.3"
 	@grep "^    name: " $(KFCTL_YAML) | awk '{print $$2}' | while read line; do echo $$line; kustomize build kubeflow/kustomize/$$line > release/$$line.yaml; done
+
+
+## install: install the released version
+install:
+	@kubectl create ns kubeflow || echo "ns kubeflow already installed."
+	@grep "^    name: " $(KFCTL_YAML) | awk '{print $$2}' | while read line; do echo ""; echo Installing $$line ...; kubectl apply -f release/$$line.yaml && sleep 10; done
+
+
+## uninstall: uninstall the released version
+uninstall:
+	@grep "^    name: " $(KFCTL_YAML) | awk '{print $$2}' | tail -r | while read line; do echo ""; echo Uninstalling $$line ...; kubectl delete -f release/$$line.yaml; done
+	@kubectl delete ns kubeflow

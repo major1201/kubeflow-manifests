@@ -1,0 +1,82 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: kubeflow
+  namespace: kubeflow
+spec:
+  weighted:
+    services:
+    - kind: Service
+      name: istio-ingressgateway
+      namespace: istio-system
+      port: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: cors-all
+  namespace: kubeflow
+spec:
+  headers:
+    accessControlAllowCredentials: "true"
+    accessControlAllowHeaders:
+    - '*'
+    accessControlAllowMethods:
+    - POST
+    - OPTIONS
+    - GET
+    - PUT
+    - HEAD
+    - DELETE
+    accessControlAllowOrigin: '*'
+    accessControlMaxAge: 100
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubeflow-basic-auth
+  namespace: kubeflow
+type: Opaque
+data:
+  users: YWRtaW46JGFwcjEkZGxwS3E0TmgkRkRncnJuMy9LYi5WT0FQaTJpMjh3MAphaXBsYXRmb3JtOiRhcHIxJEVla1ZEZGpNJHFlNHNLbVI3dHJyWi5qdFRlYXRMdDEK
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: kubeflow-basic-auth
+  namespace: kubeflow
+spec:
+  basicAuth:
+    secret: kubeflow-basic-auth
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kubeflow
+  namespace: kubeflow
+spec:
+  entryPoints:
+  - http
+  routes:
+  - kind: Rule
+    match: Host(`kubeflow.hellobike.cn`)
+    middlewares:
+    - name: cors-all
+      namespace: kubeflow
+    - name: kubeflow-basic-auth
+      namespace: kubeflow
+    services:
+    - kind: TraefikService
+      name: kubeflow
+  - kind: Rule
+    match: Host(`kubeflow-inner.hellobike.cn`)
+    middlewares:
+    - name: kubeflow-basic-auth
+      namespace: kubeflow
+    services:
+    - kind: TraefikService
+      name: kubeflow
